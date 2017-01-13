@@ -73,48 +73,13 @@
 
 - (CADisplayLink *)displayLink {
     if (!_displayLink) {
-        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCurrentCloud)];
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(makeCloud)];
+        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     }
     return _displayLink;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = RGBA(0, 114, 198, 1);
-        self.layer.masksToBounds = YES;
-        
-        [self makeParameter];
-        
-        [self start];
-    }
-    return self;
-}
-
-#pragma mark 配置参数
-- (void)makeParameter {
-    self.cloudWidth = self.frame.size.width;
-    self.cloudColor = RGBA(255, 255, 255, 0.3);
-    self.cloudSpeed = 0.05 / M_PI;
-    self.cloudPointY = 100;
-    self.cloudOffsetX = 0;
-    self.cloudAmplitude = 30;
-    self.cloudCycle =  1.03 * M_PI / self.cloudWidth;
-}
-
-#pragma mark 加载 layer ，绑定 Runloop
-- (void)start {
-    [self.layer addSublayer:self.firstCloudLayer];
-    [self.layer addSublayer:self.secondCloudLayer];
-    [self.layer addSublayer:self.thirdCloudLayer];
-    [self.layer addSublayer:self.fourthCloudLayer];
-    [self.layer addSublayer:self.fifthCloudLayer];
-    
-    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-#pragma mark 帧刷新事件
-- (void)getCurrentCloud {
+- (void)makeCloud {
     self.cloudOffsetX += self.cloudSpeed;
     
     [self cloudLayerName:self.firstCloudLayer];
@@ -124,7 +89,31 @@
     [self cloudLayerName:self.fifthCloudLayer];
 }
 
-#pragma mark shapeLayer动画
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = RGBA(0, 114, 198, 1);
+        self.layer.masksToBounds = YES;
+        
+        
+        self.cloudWidth = self.frame.size.width;
+        self.cloudColor = RGBA(255, 255, 255, 0.3);
+        self.cloudSpeed = 0.05 / M_PI;
+        self.cloudPointY = 100;
+        self.cloudOffsetX = 0;
+        self.cloudAmplitude = 30;
+        self.cloudCycle =  1.03 * M_PI / self.cloudWidth;
+        
+        [self.layer addSublayer:self.firstCloudLayer];
+        [self.layer addSublayer:self.secondCloudLayer];
+        [self.layer addSublayer:self.thirdCloudLayer];
+        [self.layer addSublayer:self.fourthCloudLayer];
+        [self.layer addSublayer:self.fifthCloudLayer];
+    }
+    return self;
+}
+
+#pragma mark - CAShapeLayer 动画
 - (void)cloudLayerName:(CAShapeLayer *)cloudLayerName {
     CGMutablePathRef path = CGPathCreateMutable();
     CGFloat y = self.cloudPointY;

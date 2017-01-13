@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B527665E3D8EFFA92C8E43DDA3E6CD13AA7613B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "131CA3BCDAC113C950EA1ACE164970950C81C31F" : 9223372036854775807,
+    "2B527665E3D8EFFA92C8E43DDA3E6CD13AA7613B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B75E0A0E-98DB-4264-A16A-879FA1F6039C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "131CA3BCDAC113C950EA1ACE164970950C81C31F" : "",
+    "2B527665E3D8EFFA92C8E43DDA3E6CD13AA7613B" : "NNCloudAnimation\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NNCloudAnimation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NNCloudAnimation.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/liuzhongning\/NNTools.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "131CA3BCDAC113C950EA1ACE164970950C81C31F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/liuzhongning\/NNCloudAnimation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B527665E3D8EFFA92C8E43DDA3E6CD13AA7613B"
+    }
+  ]
+}
